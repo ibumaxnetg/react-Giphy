@@ -27,8 +27,22 @@ export class App extends React.Component {
       const imgDataList = data.map((gif) => {
         return gif.images.downsized.url;
       });
-      console.log(imgDataList);
+      this.setState({ gifUrlList: imgDataList });
+      console.log(this.state);
     });
+  };
+
+  renderImgList = (list) => {
+    const comme = "cat";
+    const imgUrlEl = list.map((url, index) => {
+      return (
+        <li>
+          <img src={url} alt={index} />
+        </li>
+      );
+    });
+
+    return imgUrlEl;
   };
 
   render() {
@@ -36,6 +50,9 @@ export class App extends React.Component {
       <div className="App">
         <h1>Hello CodeSandbox</h1>
         <h2>Start editing to see some magic happen!</h2>
+        <div>
+          <ul>{this.renderImgList(this.state.gifUrlList)}</ul>
+        </div>
       </div>
     );
   }
