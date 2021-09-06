@@ -1,4 +1,23 @@
 .App {
   font-family: sans-serif;
   text-align: center;
+  background: wheat;
+}
+
+.gif-list {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  list-style-type: none;
+}
+
+.gif-item {
+  margin: 0;
+  padding: 0;
+  width: 10%;
+}
+
+.gif-img {
+  width: 100%;
 }
